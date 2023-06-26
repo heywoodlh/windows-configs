@@ -5,6 +5,11 @@ New-Item -Type Directory ~/.config -ErrorAction silentlycontinue
 New-Item -Type Directory ~/bin -ErrorAction silentlycontinue
 
 
+# Install winget packages
+winget import -i packages/packages.json
+
+
+
 # Configure Starship
 Copy-Item dotfiles/starship.toml ~/.config/starship.toml
 
