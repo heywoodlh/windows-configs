@@ -4,6 +4,9 @@ New-Item -Type Directory ~/.config -ErrorAction silentlycontinue
 # Create ~/bin directory
 New-Item -Type Directory ~/bin -ErrorAction silentlycontinue
 
+# Set startup folder
+$startupPath = "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup"
+
 
 # Install winget packages
 winget import -i packages/packages.json
@@ -27,15 +30,15 @@ Copy-Item dotfiles/powershell/docker.ps1 ~/.config/powershell/docker.ps1
 # Disable ctrl+super+s key (requires reboot)
 # Doesn't seem to work, remap ctrl+super+s
 # Use PowerToys Keyboard, use another bind
-Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name DisabledHotkeys -Value "SA" -Force 
+Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name DisabledHotkeys -Value "SA" -Force
 
 
 
 # Configure Vim
 Copy-Item dotfiles/vimrc ~/_vimrc
 New-Item -ErrorAction silentlycontinue -Type Directory ~/temp
-iwr -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim |`
-    ni $HOME/vimfiles/autoload/plug.vim -Force
+Invoke-WebRequest -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim |`
+    ni $HOME/vimfiles/autoload/plug.vim -Force > $null
 
 
 
@@ -57,7 +60,7 @@ Copy-Item dotfiles/whkdrc ~/.config/whkdrc
 # Start Komorebi on login
 . ./scripts/komorebi-startup.ps1
 # Start Komorebi
-get-process -name "komorebi" || start-process komorebi.exe -ArgumentList '--await-configuration' -WindowStyle hidden
+Get-Process -Name "komorebi" 2> $null || Start-Process komorebi.exe -ArgumentList '--await-configuration' -WindowStyle hidden
 
 
 
@@ -80,6 +83,13 @@ Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search -N
 
 # Disable web search taskbar
 Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Search -Name "BingSearchEnabled" -Value 0 -Type DWord
+
+
+
+# Add hide-mouse-cursor.exe to startup folder
+# Start it if not already running
+Copy-Item ./resources/hide-mouse-cursor.exe $startupPath -ErrorAction silentlycontinue
+Get-Process -Name "hide-mouse-cursor" 2> $null || & "$startupPath/hide-mouse-cursor.exe"
 
 
 
