@@ -20,3 +20,7 @@ function gomuks {
 
     docker run --rm -it -e TZ=America/Denver -e TMUX='' -v ${HOME}/.local/gomuks/cache:/home/gomuks/.cache/gomuks -v ${HOME}/.local/gomuks/share:/home/gomuks/.local/share/gomuks -v ${HOME}/.local/gomuks/config:/home/gomuks/.config/gomuks -v ${HOME}/Downloads:/home/gomuks/Downloads -v ${HOME}/tmp:/tmp docker.io/heywoodlh/gomuks $args
 }
+
+function nix {
+    docker run -it --rm -e TZ=America/Denver -v ${PWD}:/workdir -w /workdir docker.io/nixos/nix:latest nix $args
+}
