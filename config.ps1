@@ -50,7 +50,12 @@ Copy-Item dotfiles/gitconfig ~/.gitconfig
 # Configure Windows Terminal
 New-Item -Type Directory ~/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/ -ErrorAction silentlycontinue
 Copy-Item dotfiles/windows-terminal.json ~/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json
-
+if ((test-path $startupPath/windows-terminal-quake.exe) -eq $False) {
+    Invoke-WebRequest -Uri https://github.com/flyingpie/windows-terminal-quake/releases/download/v1.5/windows-terminal-quake-1.5.0-2023-04-12_2225.zip -OutFile ~/Downloads/windows-terminal-quake.zip
+    Expand-Archive ~/Downloads/windows-terminal-quake.zip -DestinationPath $startupPath
+}
+Copy-Item dotfiles/windows-terminal-quake.json $startupPath/windows-terminal-quake.json
+Get-Process -Name "windows-terminal-quake.exe" 2> $null || Start-Process $startupPath/windows-terminal-quake.exe
 
 
 # Configure Komorebi
@@ -93,8 +98,14 @@ Get-Process -Name "hide-mouse-cursor" 2> $null || & "$startupPath/hide-mouse-cur
 
 
 
-# Configure Hyper
-Copy-Item ./dotfiles/hyper.js ~/AppData/Roaming/Hyper/.hyper.js
+# Install and configure Wezterm
+if ((test-path $HOME\bin\wezterm.exe) -eq $False) {
+    Invoke-WebRequest -Uri https://github.com/wez/wezterm/releases/download/nightly/WezTerm-windows-nightly.zip -OutFile ~/Downloads/wezterm.zip
+    Expand-Archive ~/Downloads/wezterm.zip -DestinationPath ~/Downloads/wezterm
+    Copy-Item ~/Downloads/wezterm/*/* ~/bin/
+}
+
+Copy-Item ./dotfiles/wezterm.lua ~/.wezterm.lua
 
 
 

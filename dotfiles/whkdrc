@@ -68,6 +68,6 @@ win + shift + 4         : komorebic move-to-workspace 3
 win + oem_4         : komorebic cycle-workspace next
 win + oem_6         : komorebic cycle-workspace previous
 
-
 # Custom shortcuts
-ctrl + alt + t      : hyper.cmd
+ctrl + alt + t      : start-process ~\bin\wezterm-gui.exe
+win + shift + s     : explorer ms-screenclip:

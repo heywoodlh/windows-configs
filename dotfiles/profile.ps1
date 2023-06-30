@@ -22,6 +22,12 @@ $env:PATH = "C:\Program Files\whkd\bin;" + $env:PATH
 $env:PATH = "$HOME\AppData\Local\Programs\Rancher Desktop\resources\resources\win32\bin;" + $env:PATH
 
 ## Windows functions
+function restart-komorebi() {
+  get-process -name whkd | stop-process
+  get-process -name komorebi | stop-process
+  start-process komorebi.exe -ArgumentList '--await-configuration' -WindowStyle hidden
+}
+
 function which() {
   (get-command $args -erroraction silentlycontinue).source
 }
