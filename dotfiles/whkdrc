@@ -70,4 +70,4 @@ win + oem_6         : komorebic cycle-workspace previous
 
 
 # Custom shortcuts
-ctrl + alt + t      : wt.exe
+ctrl + alt + t      : hyper.cmd

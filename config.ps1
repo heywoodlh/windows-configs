@@ -93,15 +93,8 @@ Get-Process -Name "hide-mouse-cursor" 2> $null || & "$startupPath/hide-mouse-cur
 
 
 
-# Download NixOS-WSL
-New-Item -Type Directory ~/NixOS -ErrorAction silentlycontinue
-if(!(Test-Path ~/NixOS/nixos-wsl-installer.tar.gz))
-{
-    Invoke-WebRequest -Uri 'https://github.com/nix-community/NixOS-WSL/releases/download/22.05-5c211b47/nixos-wsl-x86_64-linux.tar.gz' -OutFile ~/NixOS/nixos-wsl-installer.tar.gz
-}
-# Import NixOS-WSL if not imported
-wsl -s NixOS 2> $null || wsl --import NixOS $HOME\NixOS\ $HOME\NixOS\nixos-wsl-installer.tar.gz --version 2
-wsl -s NixOS
+# Configure Hyper
+Copy-Item ./dotfiles/hyper.js ~/AppData/Roaming/Hyper/.hyper.js
 
 
 
