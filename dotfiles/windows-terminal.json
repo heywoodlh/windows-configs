@@ -14,14 +14,6 @@
         {
             "command": 
             {
-                "action": "copy",
-                "singleLine": false
-            },
-            "keys": "ctrl+c"
-        },
-        {
-            "command": 
-            {
                 "action": "splitPane",
                 "split": "right"
             },
@@ -30,11 +22,10 @@
         {
             "command": 
             {
-                "action": "splitPane",
-                "split": "auto",
-                "splitMode": "duplicate"
+                "action": "copy",
+                "singleLine": false
             },
-            "keys": "alt+shift+d"
+            "keys": "ctrl+c"
         },
         {
             "command": "unbound",
@@ -56,9 +47,10 @@
             "command": 
             {
                 "action": "splitPane",
-                "split": "down"
+                "split": "auto",
+                "splitMode": "duplicate"
             },
-            "keys": "ctrl+shift+minus"
+            "keys": "alt+shift+d"
         },
         {
             "command": 
@@ -67,6 +59,14 @@
                 "direction": "nextInOrder"
             },
             "keys": "ctrl+shift+]"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "down"
+            },
+            "keys": "ctrl+shift+minus"
         },
         {
             "command": 
@@ -81,7 +81,7 @@
     "copyFormatting": "none",
     "copyOnSelect": false,
     "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
-    "launchMode": "focus",
+    "launchMode": "default",
     "newTabMenu": 
     [
         {
@@ -373,6 +373,7 @@
         }
     ],
     "showTabsInTitlebar": true,
+    "startOnUserLogin": false,
     "themes": 
     [
         {

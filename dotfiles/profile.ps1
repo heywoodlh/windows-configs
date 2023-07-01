@@ -4,6 +4,9 @@ Set-PSReadlineOption -BellStyle None
 ## Add ~/bin to $PATH
 $env:PATH = "${HOME}\bin;" + $env:PATH
 
+## Add $startupPath variable
+$startupPath = "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup"
+
 ## Add vim to $PATH
 $vim_dir = Get-ChildItem -Path "C:\Program Files\Vim\" -Attribute 'Directory' -ErrorAction silentlycontinue | Select-Object -ExpandProperty FullName | Select -Last 1
 if (${vim_dir}) {

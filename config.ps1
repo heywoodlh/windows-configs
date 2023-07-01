@@ -50,12 +50,9 @@ Copy-Item dotfiles/gitconfig ~/.gitconfig
 # Configure Windows Terminal
 New-Item -Type Directory ~/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/ -ErrorAction silentlycontinue
 Copy-Item dotfiles/windows-terminal.json ~/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json
-if ((test-path $startupPath/windows-terminal-quake.exe) -eq $False) {
-    Invoke-WebRequest -Uri https://github.com/flyingpie/windows-terminal-quake/releases/download/v1.5/windows-terminal-quake-1.5.0-2023-04-12_2225.zip -OutFile ~/Downloads/windows-terminal-quake.zip
-    Expand-Archive ~/Downloads/windows-terminal-quake.zip -DestinationPath $startupPath
-}
-Copy-Item dotfiles/windows-terminal-quake.json $startupPath/windows-terminal-quake.json
-Get-Process -Name "windows-terminal-quake.exe" 2> $null || Start-Process $startupPath/windows-terminal-quake.exe
+Copy-Item resources/wt-startup.bat $startupPath/wt-startup.bat
+Get-Process -Name "WindowsTerminal" 2> $null || Start-Process wt.exe -ArgumentList '-w _quake' -WindowStyle hidden
+
 
 
 # Configure Komorebi
@@ -72,7 +69,7 @@ Get-Process -Name "komorebi" 2> $null || Start-Process komorebi.exe -ArgumentLis
 # Disable desktop icons
 $reg_path="HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced"
 Set-ItemProperty -Path $reg_path -Name "HideIcons" -Value 1
-Get-Process "explorer"| Stop-Process
+Get-Process "explorer" | Stop-Process
 
 
 

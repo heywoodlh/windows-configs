@@ -30,6 +30,8 @@ komorebic named-workspace-container-padding I 20
 # You can assign specific apps to named workspaces
 # komorebic named-workspace-rule exe "Firefox.exe" III
 
+komorebic float-rule exe WindowsTerminal.exe
+
 # Configure the invisible border dimensions
 komorebic invisible-borders 7 0 14 7
 
