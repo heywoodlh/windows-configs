@@ -22,6 +22,24 @@ $env:PATH = "C:\Program Files\whkd\bin;" + $env:PATH
 $env:PATH = "$HOME\AppData\Local\Programs\Rancher Desktop\resources\resources\win32\bin;" + $env:PATH
 
 ## Windows functions
+function battpop() {
+  notify-send "$((Get-WmiObject win32_battery).EstimatedChargeRemaining)"
+}
+
+function notify-send() {
+  [void] [System.Reflection.Assembly]::LoadWithPartialName("System.Windows.Forms")
+
+  $objNotifyIcon = New-Object System.Windows.Forms.NotifyIcon
+
+  $objNotifyIcon.Icon = [System.Drawing.SystemIcons]::Information
+  $objNotifyIcon.BalloonTipIcon = "Info"
+  $objNotifyIcon.BalloonTipText = "$args"
+  $objNotifyIcon.BalloonTipTitle = "notify-send"
+  $objNotifyIcon.Visible = $True
+
+  $objNotifyIcon.ShowBalloonTip(10000)
+}
+
 function restart-komorebi() {
   get-process -name whkd | stop-process
   get-process -name komorebi | stop-process
