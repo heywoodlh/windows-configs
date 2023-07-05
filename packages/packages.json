@@ -1,6 +1,6 @@
 {
 	"$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
-	"CreationDate" : "2023-06-26T16:13:15.054-00:00",
+	"CreationDate" : "2023-07-05T15:05:34.640-00:00",
 	"Sources" :
 	[
 		{
@@ -14,9 +14,6 @@
 				},
 				{
 					"PackageIdentifier" : "AutoHotkey.AutoHotkey"
-				},
-				{
-					"PackageIdentifier" : "Canonical.Ubuntu.2204"
 				},
 				{
 					"PackageIdentifier" : "Derailed.k9s"
@@ -40,6 +37,9 @@
 					"PackageIdentifier" : "Mozilla.Firefox"
 				},
 				{
+					"PackageIdentifier" : "Mozilla.Thunderbird"
+				},
+				{
 					"PackageIdentifier" : "NirSoft.NirCmd"
 				},
 				{
@@ -49,22 +49,13 @@
 					"PackageIdentifier" : "vim.vim"
 				},
 				{
-					"PackageIdentifier" : "Element.Element"
-				},
-				{
 					"PackageIdentifier" : "jftuga.less"
 				},
 				{
 					"PackageIdentifier" : "schollz.croc"
 				},
 				{
-					"PackageIdentifier" : "GoLang.Go"
-				},
-				{
 					"PackageIdentifier" : "tailscale.tailscale"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.PowerShell"
 				},
 				{
 					"PackageIdentifier" : "OpenJS.NodeJS"
@@ -73,7 +64,13 @@
 					"PackageIdentifier" : "Starship.Starship"
 				},
 				{
+					"PackageIdentifier" : "Python.Python.3.11"
+				},
+				{
 					"PackageIdentifier" : "nepnep.neofetch-win"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.PowerShell"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VisualStudioCode"
@@ -85,10 +82,16 @@
 					"PackageIdentifier" : "LGUG2Z.komorebi"
 				},
 				{
+					"PackageIdentifier" : "wez.wezterm"
+				},
+				{
 					"PackageIdentifier" : "DEVCOM.JetBrainsMonoNerdFont"
 				},
 				{
 					"PackageIdentifier" : "AgileBits.1Password"
+				},
+				{
+					"PackageIdentifier" : "gerardog.gsudo"
 				},
 				{
 					"PackageIdentifier" : "GitHub.cli"
