@@ -22,5 +22,5 @@ function gomuks {
 }
 
 function nix {
-    docker run -it --rm -e TZ=America/Denver -v ${PWD}:/workdir -w /workdir docker.io/nixos/nix:latest nix $args
+    docker run -it --rm -e TZ=America/Denver -v ${PWD}:/workdir -w /workdir docker.io/nixos/nix:latest nix --extra-experimental-features 'nix-command flakes' $args
 }

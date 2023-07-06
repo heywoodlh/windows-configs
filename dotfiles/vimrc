@@ -126,3 +126,6 @@ set shell=pwsh.exe
 set shellcmdflag=-c
 set shellquote=\"
 set shellxquote=
+set fileformat=unix
+
+map <silent> <C-y> :w! ~/temp/vimbuf <CR>:silent !cat ~/temp/vimbuf <Bar> clip.exe<CR>:redraw!<CR>

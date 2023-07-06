@@ -20,8 +20,8 @@ config.window_decorations = "RESIZE"
 config.hide_tab_bar_if_only_one_tab = true
 config.audible_bell = "Disabled"
 
--- Set pwsh.exe to default shell
-config.default_prog = { 'pwsh.exe', '-NoLogo' }
+-- Set wsl to default shell
+config.default_prog = { 'wsl.exe', '--cd', '~' }
 
 -- Keybindings
 config.leader = { key = 'a', mods = 'CTRL', timeout_milliseconds = 1000 }
