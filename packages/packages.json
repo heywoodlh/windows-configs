@@ -7,7 +7,7 @@
 			"Packages" :
 			[
 				{
-					"PackageIdentifier" : "suse.RancherDesktop"
+					"PackageIdentifier" : "Docker.DockerDesktop"
 				},
 				{
 					"PackageIdentifier" : "AgileBits.1Password.CLI"
@@ -17,9 +17,6 @@
 				},
 				{
 					"PackageIdentifier" : "Derailed.k9s"
-				},
-				{
-					"PackageIdentifier" : "Docker.DockerCLI"
 				},
 				{
 					"PackageIdentifier" : "GnuWin32.FindUtils"
@@ -101,6 +98,9 @@
 				},
 				{
 					"PackageIdentifier" : "Microsoft.PowerToys"
+				},
+				{
+					"PackageIdentifier" : "Canonical.Ubuntu.2204"
 				}
 			],
 			"SourceDetails" :

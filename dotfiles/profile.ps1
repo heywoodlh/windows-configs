@@ -21,9 +21,6 @@ $env:PATH = "C:\Program Files (x86)\GnuWin32\bin;" + $env:PATH
 ## Add whkd to $PATH
 $env:PATH = "C:\Program Files\whkd\bin;" + $env:PATH
 
-## Add rancher tools to $PATH
-$env:PATH = "$HOME\AppData\Local\Programs\Rancher Desktop\resources\resources\win32\bin;" + $env:PATH
-
 ## Windows functions
 function battpop() {
   notify-send "$((Get-WmiObject win32_battery).EstimatedChargeRemaining)"

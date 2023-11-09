@@ -17,6 +17,10 @@ winget import -i packages/packages.json
 Copy-Item dotfiles/starship.toml ~/.config/starship.toml
 
 
+# Configure SSH
+New-Item -ErrorAction silentlycontinue -Type Directory ~/.ssh
+Copy-Item dotfiles/ssh/config ~/.ssh/config
+
 
 # Configure PowerShell
 New-Item -ErrorAction silentlycontinue -Type Directory $(Split-Path $PROFILE)
@@ -48,10 +52,10 @@ Copy-Item dotfiles/gitconfig ~/.gitconfig
 
 
 # Configure Windows Terminal
-New-Item -Type Directory ~/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/ -ErrorAction silentlycontinue
-Copy-Item dotfiles/windows-terminal.json ~/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json
-Copy-Item resources/wt-startup.bat $startupPath/wt-startup.bat
-Get-Process -Name "WindowsTerminal" 2> $null || Start-Process wt.exe -ArgumentList '-w _quake' -WindowStyle hidden
+#New-Item -Type Directory ~/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/ -ErrorAction silentlycontinue
+#Copy-Item dotfiles/windows-terminal.json ~/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json
+#Copy-Item resources/wt-startup.bat $startupPath/wt-startup.bat
+#Get-Process -Name "WindowsTerminal" 2> $null || Start-Process wt.exe -ArgumentList '-w _quake' -WindowStyle hidden
 
 
 

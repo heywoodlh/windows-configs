@@ -21,7 +21,7 @@ config.hide_tab_bar_if_only_one_tab = true
 config.audible_bell = "Disabled"
 
 -- Set wsl to default shell
-config.default_prog = { 'wsl.exe', '--cd', '~' }
+config.default_prog = { 'pwsh.exe', '--NoLogo' }
 
 -- Keybindings
 config.leader = { key = 'a', mods = 'CTRL', timeout_milliseconds = 1000 }

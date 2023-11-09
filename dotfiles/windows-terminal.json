@@ -115,7 +115,7 @@
                 "source": "Windows.Terminal.PowershellCore"
             },
             {
-                "commandline": "wsl.exe -d Ubuntu",
+                "commandline": "ubuntu.exe",
                 "cursorShape": "filledBox",
                 "font": 
                 {
@@ -127,7 +127,7 @@
                 "icon": "https://assets.ubuntu.com/v1/49a1a858-favicon-32x32.png",
                 "name": "Ubuntu",
                 "startingDirectory": "~",
-                "tabTitle": "Ubuntu"
+                "tabTitle": "Linux"
             }
         ]
     },
