@@ -16,9 +16,6 @@
 					"PackageIdentifier" : "AutoHotkey.AutoHotkey"
 				},
 				{
-					"PackageIdentifier" : "Derailed.k9s"
-				},
-				{
 					"PackageIdentifier" : "GnuWin32.FindUtils"
 				},
 				{
@@ -34,9 +31,6 @@
 					"PackageIdentifier" : "Mozilla.Firefox"
 				},
 				{
-					"PackageIdentifier" : "Mozilla.Thunderbird"
-				},
-				{
 					"PackageIdentifier" : "NirSoft.NirCmd"
 				},
 				{
@@ -49,19 +43,10 @@
 					"PackageIdentifier" : "jftuga.less"
 				},
 				{
-					"PackageIdentifier" : "schollz.croc"
-				},
-				{
 					"PackageIdentifier" : "tailscale.tailscale"
 				},
 				{
-					"PackageIdentifier" : "OpenJS.NodeJS"
-				},
-				{
 					"PackageIdentifier" : "Starship.Starship"
-				},
-				{
-					"PackageIdentifier" : "Python.Python.3.11"
 				},
 				{
 					"PackageIdentifier" : "nepnep.neofetch-win"
@@ -70,16 +55,10 @@
 					"PackageIdentifier" : "Microsoft.PowerShell"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.VisualStudioCode"
-				},
-				{
 					"PackageIdentifier" : "LGUG2Z.whkd"
 				},
 				{
 					"PackageIdentifier" : "LGUG2Z.komorebi"
-				},
-				{
-					"PackageIdentifier" : "wez.wezterm"
 				},
 				{
 					"PackageIdentifier" : "DEVCOM.JetBrainsMonoNerdFont"
@@ -94,13 +73,7 @@
 					"PackageIdentifier" : "GitHub.cli"
 				},
 				{
-					"PackageIdentifier" : "SyncTrayzor.SyncTrayzor"
-				},
-				{
 					"PackageIdentifier" : "Microsoft.PowerToys"
-				},
-				{
-					"PackageIdentifier" : "Canonical.Ubuntu.2204"
 				}
 			],
 			"SourceDetails" :
