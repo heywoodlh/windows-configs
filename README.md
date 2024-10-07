@@ -8,11 +8,8 @@ Tested on Windows 11 Pro.
 
 ## Features:
 
-- Nord-themed [Windows Terminal](https://github.com/microsoft/terminal) and [WezTerm](https://github.com/wez/wezterm)
-- Windows Terminal autostarted in Quake mode
+- Nord-themed [Windows Terminal](https://github.com/microsoft/terminal)
 - Fully configured Vim with plugins managed via [vim-plug](https://github.com/junegunn/vim-plug)
-- Tiling windows with [Komorebi](https://github.com/LGUG2Z/komorebi)
-- Keyboard-driven workflows with [whkd](https://github.com/LGUG2Z/whkd)
 
 ## Dependencies:
 
