@@ -47,3 +47,11 @@ Launch `vim.exe` and the run the following command within Vim:
 ```
 :PlugInstall
 ```
+
+## WSL setup:
+
+Run the following in WSL to configure it:
+
+```
+curl https://files.heywoodlh.io/scripts/linux.sh | bash -s -- workstation --ansible --home-manager
+```

@@ -69,6 +69,14 @@
             "keys": "ctrl+shift+]"
         },
         {
+            "command":
+            {
+                "action": "globalSummon",
+                "monitor": "any"
+            },
+            "keys": "ctrl+`"
+        },
+        {
             "command": 
             {
                 "action": "moveFocus",
@@ -77,11 +85,12 @@
             "keys": "ctrl+shift+["
         }
     ],
-    "alwaysShowTabs": true,
+    "alwaysShowTabs": false,
     "copyFormatting": "none",
     "copyOnSelect": false,
     "defaultProfile": "{7a8814fb-d94c-4817-afa4-0f37d0e43139}",
-    "launchMode": "default",
+    "launchMode": "focus",
+    "centerOnLaunch": true,
     "newTabMenu": 
     [
         {
@@ -112,7 +121,9 @@
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
                 "hidden": false,
                 "name": "PowerShell",
-                "source": "Windows.Terminal.PowershellCore"
+                "source": "Windows.Terminal.PowershellCore",
+                "startingDirectory": "~",
+                "opacity": 95,
             },
             {
                 "commandline": "wsl.exe",
@@ -127,7 +138,8 @@
                 "icon": "https://assets.ubuntu.com/v1/49a1a858-favicon-32x32.png",
                 "name": "Linux",
                 "startingDirectory": "~",
-                "tabTitle": "Linux"
+                "tabTitle": "Linux",
+                "opacity": 95,
             }
         ]
     },

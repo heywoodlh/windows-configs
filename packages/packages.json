@@ -7,9 +7,6 @@
 			"Packages" :
 			[
 				{
-					"PackageIdentifier" : "Docker.DockerDesktop"
-				},
-				{
 					"PackageIdentifier" : "AgileBits.1Password.CLI"
 				},
 				{
@@ -22,6 +19,15 @@
 					"PackageIdentifier" : "Git.Git"
 				},
 				{
+					"PackageIdentifier" : "Derailed.k9s"
+				},
+				{
+					"PackageIdentifier" : "Kubernetes.kubectl"
+				},
+				{
+					"PackageIdentifier" : "Helm.Helm"
+				},
+				{
 					"PackageIdentifier" : "GnuWin32.Grep"
 				},
 				{
@@ -29,9 +35,6 @@
 				},
 				{
 					"PackageIdentifier" : "Mozilla.Firefox"
-				},
-				{
-					"PackageIdentifier" : "NirSoft.NirCmd"
 				},
 				{
 					"PackageIdentifier" : "GnuWin32.UnZip"
@@ -53,12 +56,6 @@
 				},
 				{
 					"PackageIdentifier" : "Microsoft.PowerShell"
-				},
-				{
-					"PackageIdentifier" : "LGUG2Z.whkd"
-				},
-				{
-					"PackageIdentifier" : "LGUG2Z.komorebi"
 				},
 				{
 					"PackageIdentifier" : "DEVCOM.JetBrainsMonoNerdFont"

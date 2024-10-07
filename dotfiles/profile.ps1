@@ -13,13 +13,13 @@ if (${vim_dir}) {
   $env:PATH = "${vim_dir};" + $env:PATH
 }
 
+## Add helix to $PATH
+$env:PATH = "$env:HOME\AppData\Local\Microsoft\WinGet\Packages\Helix.Helix_Microsoft.Winget.Source_8wekyb3d8bbwe\helix-24.07-x86_64-windows;" + $env:PATH
+
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User") + ";" + $env:PATH
 
 ## Add gnuwin32 executables to $PATH
 $env:PATH = "C:\Program Files (x86)\GnuWin32\bin;" + $env:PATH
-
-## Add whkd to $PATH
-$env:PATH = "C:\Program Files\whkd\bin;" + $env:PATH
 
 ## Windows functions
 function battpop() {
@@ -40,18 +40,13 @@ function notify-send() {
   $objNotifyIcon.ShowBalloonTip(10000)
 }
 
-function restart-komorebi() {
-  get-process -name whkd | stop-process
-  get-process -name komorebi | stop-process
-  start-process komorebi.exe -ArgumentList '--await-configuration' -WindowStyle hidden
-}
-
 function which() {
   (get-command $args -erroraction silentlycontinue).source
 }
 
-## Docker functions
-. ~/.config/powershell/docker.ps1
-
 ## Starship Prompt
 Invoke-Expression (&starship init powershell)
+
+function mosh() {
+  bash ~ -c "mosh $args"
+}
