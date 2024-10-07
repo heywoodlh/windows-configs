@@ -1,5 +1,10 @@
-## Disable beep
+## Better PSReadline defaults
 Set-PSReadlineOption -BellStyle None
+Set-PSReadLineOption -PredictionSource History
+Set-PSReadLineOption -EditMode vi -ViModeIndicator cursor
+Set-PSReadLineKeyHandler -Key Tab -Function Complete
+Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
+Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
 
 ## Add ~/bin to $PATH
 $env:PATH = "${HOME}\bin;" + $env:PATH
@@ -44,9 +49,10 @@ function which() {
   (get-command $args -erroraction silentlycontinue).source
 }
 
+## Unix-like `ls`
+Remove-Alias -Name ls -ErrorAction silentlycontinue
+function ls { get-childitem -path $args[0] | format-wide -property name }
+
 ## Starship Prompt
 Invoke-Expression (&starship init powershell)
 
-function mosh() {
-  bash ~ -c "mosh $args"
-}

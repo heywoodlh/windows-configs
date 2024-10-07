@@ -91,6 +91,8 @@
     "defaultProfile": "{7a8814fb-d94c-4817-afa4-0f37d0e43139}",
     "launchMode": "focus",
     "centerOnLaunch": true,
+    "initialCols": 240,
+    "initialRows": 60,
     "newTabMenu": 
     [
         {

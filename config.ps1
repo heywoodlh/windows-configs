@@ -8,7 +8,8 @@ New-Item -Type Directory ~/bin -ErrorAction silentlycontinue
 $startupPath = "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup"
 
 # Install winget packages
-winget import -i packages/packages.json
+Write-Output "Installing packages"
+winget import -i packages/packages.json > $null
 
 # Configure Starship
 Copy-Item dotfiles/starship.toml ~/.config/starship.toml
@@ -46,7 +47,7 @@ Copy-Item dotfiles/windows-terminal.json ~/AppData/Local/Packages/Microsoft.Wind
 # Disable desktop icons
 $reg_path="HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced"
 Set-ItemProperty -Path $reg_path -Name "HideIcons" -Value 1
-Get-Process "explorer" | Stop-Process
+Get-Process "explorer" | Stop-Process > $null
 
 # Set dark theme
 Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize -Name AppsUseLightTheme -Value 0 -Type Dword -Force
@@ -60,7 +61,7 @@ Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Search -N
 # Add hide-mouse-cursor.exe to startup folder
 # Start it if not already running
 Copy-Item ./resources/hide-mouse-cursor.exe $startupPath -ErrorAction silentlycontinue
-Get-Process -Name "hide-mouse-cursor" 2> $null || & "$startupPath/hide-mouse-cursor.exe"
+Get-Process -Name "hide-mouse-cursor" > $null || & "$startupPath/hide-mouse-cursor.exe" > $null
 
 # Remove all pinned items
 Copy-Item -Force resources/start2.bin $env:LOCALAPPDATA\Packages\Microsoft.Windows.StartMenuExperienceHost_cw5n1h2txyewy\LocalState\start2.bin
