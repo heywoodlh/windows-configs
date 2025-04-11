@@ -37,8 +37,8 @@ Copy-Item dotfiles/vimrc ~/_vimrc
 New-Item -ErrorAction silentlycontinue -Type Directory ~/temp
 New-Item -ErrorAction silentlycontinue -Type Directory ~/AppData/Local/nvim/
 Copy-Item dotfiles/init.vim ~/AppData/Local/nvim/init.vim
-Invoke-WebRequest -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim |`
-    ni $HOME/vimfiles/autoload/plug.vim -Force | out-null
+iwr -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim |`
+    ni "$(@($env:XDG_DATA_HOME, $env:LOCALAPPDATA)[$null -eq $env:XDG_DATA_HOME])/nvim-data/site/autoload/plug.vim" -Force
 
 # Configure Helix
 New-Item -ErrorAction silentlycontinue -Type Directory $env:APPDATA\helix\

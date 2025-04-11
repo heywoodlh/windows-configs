@@ -9,16 +9,15 @@ Plug 'ellisonleao/glow.nvim'
 Plug 'Yggdroot/indentLine'
 Plug 'farmergreg/vim-lastplace'
 Plug 'preservim/nerdtree'
+Plug 'shaunsingh/nord.nvim'
 call plug#end()
 
-if winheight(0) >= 35
-	set termwinsize=10x0
-	set confirm
-	set splitbelow
-end
 " Clear terminal buffer on exit (without it, Airline messes up shell)
 set t_ti= t_te=
 syntax on
+
+" Set nord colorscheme
+silent! colorscheme nord
 
 filetype plugin indent on
 let g:mapleader = "\<Space>"

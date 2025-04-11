@@ -72,3 +72,7 @@ function ssh-unlock() {
   ssh-add $env:HOME\.ssh\id_rsa
   remove-item -ErrorAction silentlycontinue $env:HOME\.ssh\id_rsa
 }
+
+function vim() {
+  nvim.exe $args
+}
