@@ -118,5 +118,8 @@ if ($args[0] -eq "gaming") {
   Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" -Name "ActiveHoursStart" -Value 8
   Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" -Name "ActiveHoursEnd" -Value 2
 
+  # Configure windows-terminal for gaming machine
+  Copy-Item dotfiles/windows-terminal-gaming.json ~/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json
+
   winget install LizardByte.Sunshine Valve.Steam | filter_winget
 }
