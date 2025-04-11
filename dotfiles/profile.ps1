@@ -56,3 +56,19 @@ function ls { get-childitem -path $args[0] | format-wide -property name }
 ## Starship Prompt
 Invoke-Expression (&starship init powershell)
 
+# Sign into 1Password CLI to allow the
+$env:PATH += ";$env:LOCALAPPDATA\Microsoft\WinGet\Links"
+function op-unlock() {
+  Invoke-Expression $(op signin)
+}
+
+function ssh-unlock() {
+  op-unlock
+  new-item -itemtype Directory -path $env:HOME\.ssh -erroraction silentlycontinue
+  op read 'op://Personal/rlt3q545cf5a4r4arhnb4h5qmi/private_key' > $env:HOME\.ssh\id_rsa
+  Cmd /c Icacls  %UserProfile%\.ssh /c /t /Inheritance:d | out-null
+  Cmd /c Icacls  %UserProfile%\.ssh /c /t /Grant %UserName%:F | out-null
+  Cmd /c Icacls  %UserProfile%\.ssh /c /t /Remove Administrator "Authenticated Users" BUILTIN\Administrators BUILTIN Everyone System Users
+  ssh-add $env:HOME\.ssh\id_rsa
+  remove-item -ErrorAction silentlycontinue $env:HOME\.ssh\id_rsa
+}

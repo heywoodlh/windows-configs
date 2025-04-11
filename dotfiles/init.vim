@@ -1,0 +1,1 @@
+set fileformats=unix,dos

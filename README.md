@@ -11,31 +11,38 @@ Tested on Windows 11 Pro.
 - Nord-themed [Windows Terminal](https://github.com/microsoft/terminal)
 - Fully configured Vim with plugins managed via [vim-plug](https://github.com/junegunn/vim-plug)
 
-## Dependencies:
-
-[Winget](https://github.com/microsoft/winget-cli):
-
-[PowerShell Core](https://github.com/PowerShell/PowerShell):
-
-```
-winget install --id Microsoft.PowerShell
-```
-
-[Git](https://git-scm.com/):
-
-```
-winget install --id Git.Git
-```
-
 ## Usage:
 
-Executed from a PowerShell Core shell session:
+The below commands should all be executed from a PowerShell session with Administrator privileges:
 
 ```
-git clone https://github.com/heywoodlh/windows-configs
-cd windows-configs
-. .\config.ps1
+winget install Microsoft.PowerShell Git.Git --accept-package-agreements --accept-source-agreements
+New-Item -ErrorAction Ignore -Path $env:HOME\opt -ItemType Directory
+& "C:\Program Files\Git\cmd\git.exe" clone https://github.com/heywoodlh/windows-configs.git $env:HOME\opt\windows-configs
 ```
+
+### Gaming profile
+
+If the gaming profile is desired then run these command:
+
+```
+Push-Location $env:HOME\opt\windows-configs
+& "C:\Program Files\PowerShell\7\pwsh.exe" .\config.ps1 gaming
+Pop-Location
+```
+
+### Dev profile
+
+If the "dev" profile is desired then run these command:
+
+```
+Push-Location $env:HOME\opt\windows-configs
+& "C:\Program Files\PowerShell\7\pwsh.exe" .\config.ps1 dev
+Pop-Location
+```
+
+
+
 
 ### Vim Plugins:
 
