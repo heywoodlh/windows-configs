@@ -121,5 +121,5 @@ if ($args[0] -eq "gaming") {
   # Configure windows-terminal for gaming machine
   Copy-Item dotfiles/windows-terminal-gaming.json ~/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json
 
-  winget install LizardByte.Sunshine Valve.Steam | filter_winget
+  winget install LizardByte.Sunshine Valve.Steam RustDesk.RustDesk | filter_winget
 }
