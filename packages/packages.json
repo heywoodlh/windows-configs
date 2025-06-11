@@ -25,9 +25,6 @@
 					"PackageIdentifier" : "Microsoft.WindowsTerminal"
 				},
 				{
-					"PackageIdentifier" : "Mozilla.Firefox"
-				},
-				{
 					"PackageIdentifier" : "GnuWin32.UnZip"
 				},
 				{
